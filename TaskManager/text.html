@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+           background-color: green;
+           padding: 23rem; 
+        };
+        #account_links{
+            background-color: grey;
+            padding: 23rem;
+        }
+        
+    
+    </style>  
+</head>
+<body>
+    <div id="buttons"> 
+        <!-- buttons... -->
+        <button class="buttonClass">Click me</button>
+        <button class="buttonClass">Click me</button>
+        <button class="buttonClass">Click me</button>
+      </div>
+      
+  <script>
+   document.getElementById('buttons')
+    .addEventListener('click', function(e) { 
+         // Step 2
+      if (e.target.className === 'buttonClass') {
+        // Step 3
+        console.log('Click!');
+      }
+    });
+
+
+  </script>
+</body>
+</html>
