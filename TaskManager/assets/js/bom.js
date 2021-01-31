@@ -43,19 +43,9 @@ const length = document.querySelector('.badge');
 const state = document.querySelector('.badge');
 
 
-const height = document.querySelector('.badge');
-const width = document.querySelector('.badge');
-const pixelDepth = document.querySelector('.badge');
-
-// browser history
-const length = document.querySelector('.badge');
-const state = document.querySelector('.badge');
-
-
 
 
 
 // Display the BOM Information on the innerHTML of the elements
 
-href.innerHTML = window.location.
 // 
