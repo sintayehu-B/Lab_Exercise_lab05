@@ -102,37 +102,55 @@ function populateTaskList(key) {
 }
 
 // Sorting Task
-function sortTask(e){
-    let doSort = "Ascending";
-    if( sortBtn.firstElementChild.classList.contains('fa-arrow-circle-up')){
-        sortBtn.firstElementChild.classList.remove('fa-arrow-circle-up');
-        sortBtn.firstElementChild.classList.add('fa-arrow-circle-down');
-        doSort = "Ascending"
-    }
-    else{
-        
-        e.target.firstElementChild.classList.remove('fa-arrow-circle-down');
-        e.target.firstElementChild.classList.add('fa-arrow-circle-up');
-        doSort = "Descending";
-    }
-    let sort_by_date = function(a, b) {
-        return Date.parse(a.querySelector(".showDate").innerHTML) > Date.parse(b.querySelector(".showDate")).innerHTML;
-    }
-    let lists  = taskList.querySelectorAll(".collection-item");
-    console.log(lists);
-    const li = Array.from(lists);
-    li.reverse();
-    if(doSort==="Ascending"){
-        li.sort(sort_by_date);
-    }
-    else{
-        li.sort(sort_by_date);
-        li.reverse()
-    }
-    console.log(li);
-    lists = li;
+
+function sortList() {
+	var list, i, switching, b, shouldSwitch;
+	list = document.getElementById('c');
+	switching = true;
+
+	while (switching) {
+		switching = false;
+		b = list.getElementsByTagName('li');
+
+		for (i = 0; i < b.length - 1; i++) {
+			shouldSwitch = false;
+
+			if (b[i].lastChild.textContent > b[i + 1].lastChild.textContent) {
+				shouldSwitch = true;
+				break;
+			}
+		}
+		if (shouldSwitch) {
+			b[i].parentNode.insertBefore(b[i + 1], b[i]);
+
+			switching = true;
+		}
+	}
 }
 
+function sortListD() {
+	var list, i, switching, b, shouldSwitch;
+	list = document.getElementById('c');
+	switching = true;
+
+	while (switching) {
+		switching = false;
+		b = list.getElementsByTagName('li');
+		for (i = 0; i < b.length - 1; i++) {
+			shouldSwitch = false;
+
+			if (b[i].lastChild.textContent < b[i + 1].lastChild.textContent) {
+				shouldSwitch = true;
+				break;
+			}
+		}
+		if (shouldSwitch) {
+			b[i].parentNode.insertBefore(b[i + 1], b[i]);
+			switching = true;
+		}
+	}
+	console.log(list);
+}
 
 
 
